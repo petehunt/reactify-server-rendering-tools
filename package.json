@@ -3,15 +3,15 @@
   "version": "0.0.1",
   "description": "Simple command-line tool for reactify-server-rendering",
   "bin": {
-    "reactify": {"bin/reactify.js"}
+    "reactify": "bin/reactify.js"
   },
   "author": "petehunt",
   "license": "MIT",
   "dependencies": {
     "browserify": "*",
     "optimist": "*",
-    "reactify-server-rendering": "*",
-    "react-tools": "http://petehunt.net/react.tar.gz"
+    "reactify-server-rendering": "petehunt/reactify-server-rendering",
+    "react-tools": "http://petehunt.net/react.tar.gz",
     "watchify": "*"
   }
 }

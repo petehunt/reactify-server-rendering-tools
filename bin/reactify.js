@@ -16,6 +16,8 @@ var argv = optimist
   .boolean('w')
   .alias('w', 'watch')
   .describe('w', 'Rebuild automatically when the source is changed')
+  .alias('t', 'transform')
+  .describe('t', 'Extra Browserify transform module to use')
   .argv;
 
 var transforms = [
