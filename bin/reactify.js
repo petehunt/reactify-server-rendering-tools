@@ -32,20 +32,21 @@ if (!argv.d) {
 }
 
 var roots = argv._;
+var baseDir = argv.b;
 
 var b = browserify();
 
 transforms.forEach(b.transform.bind(b));
 
-var requireOpts = null;
+var requireOpts = {};
 if (argv.b) {
-  requireOpts = {basedir: argv.b};
+  requireOpts.basedir = argv.b;
 }
 
 b.require('reactify-server-rendering');
 
 roots.forEach(function(root) {
-  b.require(root, requireOpts);
+  b.require(root, {expose: root, basedir: baseDir});
 });
 
 // This should be the same as the one used by reactify-server-rendering
