@@ -20,7 +20,7 @@ if (argv._.length !== 1) {
 
 var props = JSON.parse(argv.p || 'null');
 
-eval(fs.readFileSync(argv._[0], 'utf8'));
+eval(fs.readFileSync(argv.b, 'utf8'));
 
 // Now we have Browserify's require() which includes:
 // - The app
