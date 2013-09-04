@@ -6,7 +6,7 @@ var optimist = require('optimist');
 var watchify = require('watchify');
 
 var argv = optimist
-  .usage('Usage: $0 -o [output filename] -t [transform module] [-d] [-w] [module ID...]')
+  .usage('Usage: $0 -o [output filename] -t [transform module] -b [base module root] [-d] [-w] [module ID...]')
   .demand(['o'])
   .alias('o', 'output')
   .describe('o', 'Output bundle filename')
@@ -18,6 +18,8 @@ var argv = optimist
   .describe('w', 'Rebuild automatically when the source is changed')
   .alias('t', 'transform')
   .describe('t', 'Extra Browserify transform module to use')
+  .alias('b', 'base')
+  .describe('b', 'Base directory to compute module IDs from')
   .argv;
 
 var transforms = [
@@ -29,12 +31,23 @@ if (!argv.d) {
   transforms.push('uglifyify');
 }
 
-var roots = ['reactify-server-rendering'].concat(argv._);
+var roots = argv._;
 
 var b = browserify();
 
 transforms.forEach(b.transform.bind(b));
-roots.forEach(b.require.bind(b));
+
+var requireOpts = null;
+if (argv.b) {
+  requireOpts = {basedir: argv.b};
+}
+
+b.require('reactify-server-rendering');
+
+roots.forEach(function(root) {
+  b.require(root, requireOpts);
+});
+
 // This should be the same as the one used by reactify-server-rendering
 // so it's not double bundled.
 b.require('react-tools/build/modules/React', {expose: 'React'});
