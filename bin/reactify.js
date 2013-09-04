@@ -41,7 +41,11 @@ b.require('react-tools/build/modules/React', {expose: 'React'});
 
 function updateBundle() {
   b.bundle({debug: argv.d}, function(err, result) {
-    fs.writeFileSync(argv.o, result);
+    if (err) {
+      console.error(err);
+    } else {
+      fs.writeFileSync(argv.o, result);
+    }
   });
 }
 
