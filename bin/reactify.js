@@ -7,9 +7,11 @@ var watchify = require('watchify');
 
 var argv = optimist
   .usage('Usage: $0 -o [output filename] -t [transform module] -b [base module root] [-d] [-w] [module ID...]')
-  .demand(['o'])
+  .demand(['o', 'b'])
   .alias('o', 'output')
   .describe('o', 'Output bundle filename')
+  .alias('b', 'base')
+  .describe('b', 'Base directory to compute module IDs from')
   .boolean('d')
   .alias('d', 'debug')
   .describe('d', 'Debug mode: include sourcemaps and do not minify')
@@ -18,8 +20,6 @@ var argv = optimist
   .describe('w', 'Rebuild automatically when the source is changed')
   .alias('t', 'transform')
   .describe('t', 'Extra Browserify transform module to use')
-  .alias('b', 'base')
-  .describe('b', 'Base directory to compute module IDs from')
   .argv;
 
 var transforms = [
