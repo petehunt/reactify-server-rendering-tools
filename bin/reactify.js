@@ -23,12 +23,12 @@ var argv = optimist
   .argv;
 
 var transforms = [
-  'reactify',
-  'staticify'
+  require.resolve('reactify'),
+  require.resolve('staticify')
 ].concat(argv.t || []);
 
 if (!argv.d) {
-  transforms.push('uglifyify');
+  transforms.push(require.resolve('uglifyify'));
 }
 
 var roots = argv._;
