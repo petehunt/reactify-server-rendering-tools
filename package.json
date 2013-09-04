@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Simple command-line tool for reactify-server-rendering",
   "bin": {
-    "reactify": "bin/reactify.js"
+    "reactify": "bin/reactify.js",
+    "reactify-render": "bin/reactify-render.js"
   },
   "author": "petehunt",
   "license": "MIT",
