@@ -43,7 +43,10 @@ if (argv.b) {
   requireOpts.basedir = argv.b;
 }
 
-b.require('reactify-server-rendering');
+b.require(
+  require.resolve('reactify-server-rendering'),
+  {expose: 'reactify-server-rendering'}
+);
 
 roots.forEach(function(root) {
   b.require(root, {expose: root, basedir: baseDir});
@@ -51,7 +54,10 @@ roots.forEach(function(root) {
 
 // This should be the same as the one used by reactify-server-rendering
 // so it's not double bundled.
-b.require('react-tools/build/modules/React', {expose: 'React'});
+b.require(
+  require.resolve('react-tools/build/modules/React'),
+  {expose: 'React'}
+);
 
 function updateBundle() {
   b.bundle({debug: argv.d}, function(err, result) {

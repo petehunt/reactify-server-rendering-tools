@@ -11,9 +11,9 @@
   "dependencies": {
     "browserify": "*",
     "optimist": "*",
+    "watchify": "*",
     "reactify-server-rendering": "petehunt/reactify-server-rendering",
     "react-tools": "http://petehunt.net/react.tar.gz",
-    "uglifyify": "*",
-    "watchify": "*"
+    "uglifyify": "*"
   }
 }
