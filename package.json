@@ -9,7 +9,7 @@
   "author": "petehunt",
   "license": "MIT",
   "dependencies": {
-    "browserify": "*",
+    "browserify": "2.29.0",
     "optimist": "*",
     "reactify": "*",
     "staticify": "petehunt/staticify",
