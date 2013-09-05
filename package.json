@@ -11,7 +11,7 @@
   "dependencies": {
     "browserify": "*",
     "optimist": "*",
-    "reactify": "andreypopp/reactify",
+    "reactify": "*",
     "staticify": "petehunt/staticify",
     "watchify": "*",
     "reactify-server-rendering": "petehunt/reactify-server-rendering",
