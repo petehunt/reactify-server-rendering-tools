@@ -15,7 +15,6 @@
     "staticify": "petehunt/staticify",
     "watchify": "*",
     "reactify-server-rendering": "petehunt/reactify-server-rendering",
-    "react-tools": "http://petehunt.net/react.tar.gz",
     "uglifyify": "*"
   },
   "preferGlobal": true
