@@ -2,6 +2,10 @@
 
 Since React can run on the server, it can replace your whole templating system! And it's super nice. Here are two tools to make this easier.
 
+## Requirements
+
+You need to install `react-tools` **globally**. This will not be done automatically for you.
+
 ## reactify CLI
 
 React apps in, a single server-or-browser JS file out. Also works with `staticify`.

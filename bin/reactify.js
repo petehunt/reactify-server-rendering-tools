@@ -52,12 +52,7 @@ roots.forEach(function(root) {
   b.require(root, {expose: root, basedir: baseDir});
 });
 
-// This should be the same as the one used by reactify-server-rendering
-// so it's not double bundled.
-b.require(
-  require.resolve('react-tools/build/modules/React'),
-  {expose: 'React'}
-);
+b.require('react-tools/build/modules/React');
 
 function updateBundle() {
   b.bundle({debug: argv.d}, function(err, result) {
