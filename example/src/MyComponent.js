@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-var React = require('React');
+var React = require('react-tools/build/modules/React');
 var myimg = require('./myimg.jpg');
 
 var MyComponent = React.createClass({
