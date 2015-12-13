@@ -1,5 +1,7 @@
 # reactify-server-rendering-tools
 
+![unmaintained](http://img.shields.io/badge/status-unmaintained-red.png)
+
 Since React can run on the server, it can replace your whole templating system! And it's super nice. Here are two tools to make this easier.
 
 ## Requirements
